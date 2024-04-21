@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "trainers-backpack",
+  "version": "${version}",
+  "name": "Trainers-Backpack",
+  "description": "-",
+  "authors": [
+    "gatekeep"
+  ],
+  "contact": {
+    "website": "-",
+    "repo": "https://github.com/gatekeep06/Trainers-Backpack"
+  },
+  "license": "MPL-2.0",
+  "icon": "assets/trainers-backpack/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "com.metacontent.trainersbackpack.client.TrainersBackpackClient"
+    ],
+    "main": [
+      "com.metacontent.trainersbackpack.TrainersBackpack"
+    ]
+  },
+  "mixins": [
+    "trainers-backpack.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.15.3",
+    "fabric": "*",
+    "minecraft": "1.20.1"
+  }
+}
