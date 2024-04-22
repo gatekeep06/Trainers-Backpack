@@ -4,6 +4,7 @@
   "package": "com.metacontent.trainersbackpack.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "BackpackAbilitiesMixin"
   ],
   "client": [
   ],
