@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=south": { "model": "trainersbackpack:block/healing_backpack" },
+    "facing=east": { "model": "trainersbackpack:block/healing_backpack","y":270 },
+    "facing=west": { "model": "trainersbackpack:block/healing_backpack","y":90 },
+    "facing=north": { "model": "trainersbackpack:block/healing_backpack","y":180 }
+  }
+}
