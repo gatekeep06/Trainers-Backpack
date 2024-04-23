@@ -27,12 +27,16 @@ public class TrainersBackpackItems {
 
         ModItems.BACKPACKS.add(HEALING_BACKPACK_ITEM);
 
-        List<String> backpackNames = new ArrayList<>(List.of(Reference.BACKPACK_NAMES));
-        backpackNames.add("healing_backpack");
-        Reference.BACKPACK_NAMES = backpackNames.toArray(new String[]{});
-
         ItemGroupEvents.modifyEntriesEvent(ModItemGroups.TRAVELERS_BACKPACK).register(entries -> {
             entries.add(HEALING_BACKPACK_ITEM);
         });
+    }
+
+    public static void registerBackpackNames() {
+        TrainersBackpack.LOGGER.info("Registering backpack names for " + TrainersBackpack.ID);
+
+        List<String> backpackNames = new ArrayList<>(List.of(Reference.BACKPACK_NAMES));
+        backpackNames.add("healing_backpack");
+        Reference.BACKPACK_NAMES = backpackNames.toArray(new String[]{});
     }
 }
