@@ -1,7 +1,6 @@
 package com.metacontent.trainersbackpack.mixin;
 
 import com.cobblemon.mod.common.Cobblemon;
-import com.metacontent.trainersbackpack.TrainersBackpack;
 import com.metacontent.trainersbackpack.item.TrainersBackpackItems;
 import com.tiviacz.travelersbackpack.blockentity.TravelersBackpackBlockEntity;
 import com.tiviacz.travelersbackpack.common.BackpackAbilities;
@@ -25,7 +24,7 @@ public class BackpackAbilitiesMixin {
     @Mutable
     @Shadow @Final public static Item[] ITEM_ABILITIES_LIST;
 
-    @Shadow @Final public static List<Item> ALLOWED_ABILITIES;
+    @Shadow(remap = false) @Final public static List<Item> ALLOWED_ABILITIES;
 
     @Inject(method = "abilityTick", at = @At("HEAD"))
     protected void injectAbilityTickMethod(ItemStack stack, PlayerEntity player, TravelersBackpackBlockEntity blockEntity, CallbackInfo ci) {
