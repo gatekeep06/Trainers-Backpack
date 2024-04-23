@@ -14,6 +14,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Mixin(BackpackAbilities.class)
@@ -49,14 +50,14 @@ public class BackpackAbilitiesMixin {
 
     @Inject(method = "<clinit>", at = @At("TAIL"))
     private static void injectStaticBlock(CallbackInfo ci) {
-        List<Item> allAbilitiesList = List.of(ALL_ABILITIES_LIST);
-        List<Item> itemAbilitiesList = List.of(ITEM_ABILITIES_LIST);
+        List<Item> allAbilitiesList = new ArrayList<>(List.of(ALL_ABILITIES_LIST));
+        List<Item> itemAbilitiesList = new ArrayList<>(List.of(ITEM_ABILITIES_LIST));
 
         allAbilitiesList.add(TrainersBackpackItems.HEALING_BACKPACK_ITEM);
         itemAbilitiesList.add(TrainersBackpackItems.HEALING_BACKPACK_ITEM);
 
         ALL_ABILITIES_LIST = allAbilitiesList.toArray(new Item[]{});
-        ITEM_ABILITIES_LIST = allAbilitiesList.toArray(new Item[]{});
+        ITEM_ABILITIES_LIST = itemAbilitiesList.toArray(new Item[]{});
 
         ALLOWED_ABILITIES.add(TrainersBackpackItems.HEALING_BACKPACK_ITEM);
     }
