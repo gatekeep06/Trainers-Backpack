@@ -3,8 +3,10 @@ package com.metacontent.trainersbackpack.item;
 import com.metacontent.trainersbackpack.TrainersBackpack;
 import com.metacontent.trainersbackpack.block.TrainersBackpackBlocks;
 import com.tiviacz.travelersbackpack.blocks.TravelersBackpackBlock;
+import com.tiviacz.travelersbackpack.init.ModItemGroups;
 import com.tiviacz.travelersbackpack.init.ModItems;
 import com.tiviacz.travelersbackpack.items.TravelersBackpackItem;
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
@@ -19,5 +21,8 @@ public class TrainersBackpackItems {
     public static void registerItems() {
         TrainersBackpack.LOGGER.info("Registering items for " + TrainersBackpack.ID);
         ModItems.BACKPACKS.add(HEALING_BACKPACK_ITEM);
+        ItemGroupEvents.modifyEntriesEvent(ModItemGroups.TRAVELERS_BACKPACK).register(entries -> {
+            entries.add(HEALING_BACKPACK_ITEM);
+        });
     }
 }
